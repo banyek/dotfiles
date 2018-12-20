@@ -1,0 +1,44 @@
+#!/bin/bash
+export HOMEBREW_GITHUB_API_TOKEN="fcc3809773bdc1d0405c45e2e500b306582e758c"
+
+function ext_ip {
+    curl ifconfig.co
+}
+    
+function weather {
+    if [[ -z $1  ]];
+    then
+        curl wttr.in/Budapest
+    else
+        curl wttr.in/$1
+    fi
+}
+
+function fzm {
+	vim $(fzf)
+}
+
+
+function  worklog {
+    if [[ -z $1 ]]; then
+        WEEK=$(date +%W)
+    elif [[ $1 = 'prev' ]]; then
+        WEEK=$(($(date +%W)-1))
+    elif [[ $1 = 'next' ]]; then
+        WEEK=$(($(date +%W)+1))
+    elif [[ $$1 = 'init' ]]; then
+        CURRENTWEEK=$(date +%W)
+        NEXTWEEK=$(($(date +%W)+1))
+        cp ~/projects/wikimedia/worklog/worklog-$CURRENTWEEK.md ~/projects/wikimedia/worklog/worklog-$NEXTWEEK.md
+    else 
+        WEEK=$1
+    fi
+    vim ~/projects/wikimedia/worklog/worklog-$(date +%Y-)$WEEK.md
+}
+
+alias ls=exa
+alias cat=bat
+alias ping="prettyping --nolegend"
+
+ [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"

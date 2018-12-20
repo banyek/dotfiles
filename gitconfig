@@ -1,0 +1,12 @@
+[user]
+	name = Balazs Pocze
+	email = banyek@gmail.com
+[alias]
+	last = log -1 HEAD
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	unstage = reset HEAD --
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
