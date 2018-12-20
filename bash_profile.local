@@ -29,11 +29,11 @@ function  worklog {
     elif [[ $$1 = 'init' ]]; then
         CURRENTWEEK=$(date +%W)
         NEXTWEEK=$(($(date +%W)+1))
-        cp ~/projects/wikimedia/worklog/worklog-$CURRENTWEEK.md ~/projects/wikimedia/worklog/worklog-$NEXTWEEK.md
+        cp ~/projects/worklog/worklog-$CURRENTWEEK.md ~/projects/wikimedia/worklog/worklog-$NEXTWEEK.md
     else 
         WEEK=$1
     fi
-    vim ~/projects/wikimedia/worklog/worklog-$(date +%Y-)$WEEK.md
+    vim ~/projects/worklog/worklog-$(date +%Y-)$WEEK.md
 }
 
 alias ls=exa
