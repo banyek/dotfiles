@@ -1,5 +1,4 @@
 #!/bin/bash
-export HOMEBREW_GITHUB_API_TOKEN="fcc3809773bdc1d0405c45e2e500b306582e758c"
 
 function ext_ip {
     curl ifconfig.co
