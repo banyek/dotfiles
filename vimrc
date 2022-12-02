@@ -1,7 +1,7 @@
 "
 "  Do not forget to create ~/.vim directory
 "
-set number relativenumber                                             " Line numbering
+set number                                              " Line numbering
 inoremap jj <Esc>                                       " Damn touchbar
 autocmd BufWritePre *.pp :%s/\s\+$//e                   " Remove whitespaes from the end of puppet file lines
 autocmd BufNewFile,BufRead *.pp set filetype=ruby       " Deal *.pp files with Ruby syntax
@@ -47,6 +47,6 @@ augroup END
 
 augroup numbertoggle
   autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+  autocmd BufEnter,FocusGained,InsertLeave * set number
+  autocmd BufLeave,FocusLost,InsertEnter   * set nonumber
 augroup END
