@@ -2,7 +2,6 @@
 "  Do not forget to create ~/.vim directory
 "
 set number                                              " Line numbering
-inoremap jj <Esc>                                       " Damn touchbar
 autocmd BufWritePre *.pp :%s/\s\+$//e                   " Remove whitespaes from the end of puppet file lines
 autocmd BufNewFile,BufRead *.pp set filetype=ruby       " Deal *.pp files with Ruby syntax
 autocmd BufNewFile,BufRead *.cf set filetype=yaml       " Deal *.cf files with yaml syntax
